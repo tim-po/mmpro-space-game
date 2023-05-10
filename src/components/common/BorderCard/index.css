@@ -1,0 +1,6 @@
+.border-card-container {
+    flex-grow: 2;
+    min-width: 300px;
+    max-width: 100%;
+    /*margin: 12px;*/
+}

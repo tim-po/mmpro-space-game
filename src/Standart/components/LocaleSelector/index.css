@@ -1,0 +1,48 @@
+.locale-selector{
+    height: 41px;
+    width: 41px;
+    border-radius: 20px;
+    /*border: 1px solid white;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /*background: black;*/
+}
+
+.locale-button{
+    transition: all 0.3s 0.1s;
+    position: absolute;
+    top: 0;
+    border-radius: 20px;
+    left: 0;
+    height: 41px;
+    width: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none !important;
+    background: black;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.locale-button.opened{
+    transition: all 0.3s;
+    top: 41px;
+}
+
+.locale-button.selected{
+    z-index: 3;
+}
+
+.inner-text{
+    transition: all 0.3s;
+    transform: translateY(0);
+}
+.locale-button.selected.opened .inner-text{
+    transform: translateY(0);
+}
+.locale-button.selected .inner-text{
+    transform: translateY(-4px);
+}

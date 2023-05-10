@@ -1,0 +1,6 @@
+[submodule "MMPROStandartLibriary"]
+	path = MMPROStandartLibriary
+	url = https://github.com/marketmakingpro/MMPROStandartLibriary.git
+[submodule "src/Standart"]
+	path = src/Standart
+	url = https://github.com/marketmakingpro/MMPROStandartLibriary.git
