@@ -236,7 +236,7 @@ export const AllocationItem = ({tier, price, initAmount, updateBalance, balance}
                     {/*    {localized(texts.AllocationUpTo, locale)}: <b>{ticketAmount}</b>*/}
                     {/*</div>*/}
                     <div style={{fontSize: 17}}>
-                        {localized(texts.Price, locale)}: {price} BUSD
+                        {localized(texts.Price, locale)}: {wei2eth(price)} BUSD
                     </div>
                 </div>
                 }
@@ -268,7 +268,7 @@ export const AllocationItem = ({tier, price, initAmount, updateBalance, balance}
                     {/*    {localized(texts.Claimable, locale)}: <b>{parseFloat(wei2eth(claimable).toString()).toFixed(2)}</b> MMPRO*/}
                     {/*</div>*/}
                     <div style={{fontSize: 17}}>
-                        {localized(texts.Price, locale)}: {price} BUSD
+                        {localized(texts.Price, locale)}: {wei2eth(price)} BUSD
                     </div>
                     <button
                       onClick={handleBuy}
