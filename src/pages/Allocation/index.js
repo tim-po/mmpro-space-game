@@ -45,7 +45,7 @@ export const Allocation = () => {
         setLoadingPrices(true);
         let price = await allocationMarketplaceContract
           .methods
-          .priceInBNB()
+          .NFTprice()
           .call();
 
         setAllocationPrice(price);

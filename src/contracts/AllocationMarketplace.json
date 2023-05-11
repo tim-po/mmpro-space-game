@@ -5,12 +5,12 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_priceInBNB",
+          "name": "_priceInMMPRO",
           "type": "uint256"
         },
         {
           "internalType": "address",
-          "name": "_bnbToken",
+          "name": "_mmproToken",
           "type": "address"
         },
         {
@@ -142,6 +142,19 @@
       "type": "event"
     },
     {
+      "inputs": [],
+      "name": "NFTprice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "address",
@@ -191,19 +204,6 @@
           "internalType": "uint256",
           "name": "",
           "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "bnbToken",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -306,6 +306,19 @@
     },
     {
       "inputs": [],
+      "name": "mmproToken",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "name",
       "outputs": [
         {
@@ -344,19 +357,6 @@
           "internalType": "address",
           "name": "",
           "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "priceInBNB",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -486,11 +486,11 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_priceInBNB",
+          "name": "_priceInMMPRO",
           "type": "uint256"
         }
       ],
-      "name": "setPriceInBNB",
+      "name": "setPriceInMMPRO",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
