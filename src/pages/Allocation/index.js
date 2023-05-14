@@ -5,7 +5,7 @@ import {useAllocationMarketplaceContract} from "../../hooks/useContracts";
 import {AllocationContainer} from "../../components/AllocationContainer";
 import {wei2eth} from "../../utils/common";
 import BorderCard from "../../components/common/BorderCard"
-import {useBalanceOfBUSD} from "../../hooks/useBalance";
+import { useBalanceOfBUSD, useBalanceOfMMPRO } from "../../hooks/useBalance";
 import {AllocationItem} from "../../components/AllocationItem";
 import texts from './localization'
 import LocaleContext from "../../Standart/LocaleContext";
@@ -20,7 +20,7 @@ export const Allocation = () => {
     const {locale} = useContext(LocaleContext)
     const allocationMarketplaceContract = useAllocationMarketplaceContract();
 
-    const {balance, balanceLoading, updateBalance} = useBalanceOfBUSD(account)
+    const {balance, balanceLoading, updateBalance} = useBalanceOfMMPRO(account)
 
     const [allocationBalance, setAllocationBalance] = useState(0);
     const [allocationPrice, setAllocationPrice] = useState(undefined);
@@ -68,7 +68,7 @@ export const Allocation = () => {
     const showLoading = loadingBalances && loadingPrices
     const showAllocationBody = !showLoading && !showConnectWallet
 
-    const balanceMessage = balanceLoading ? `${localized(texts.Loading, locale)}...` : `${localized(texts.Available, locale)}: ${wei2eth(balance)} BUSD`
+    const balanceMessage = balanceLoading ? `${localized(texts.Loading, locale)}...` : `${localized(texts.Available, locale)}: ${wei2eth(balance)} MMPRO`
 
     return (
         <div className="staking-page-container mx-auto pb-18 px-4 force-height">

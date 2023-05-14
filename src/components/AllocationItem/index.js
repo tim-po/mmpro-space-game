@@ -1,7 +1,12 @@
 import React, {useContext, useEffect, useState} from "react";
 import Spinner from "../common/Spinner";
 import {wei2eth} from "../../utils/common";
-import {useAllocationMarketplaceContract, useBUSDContract, usePancakeRouterContract} from "../../hooks/useContracts";
+import {
+    useAllocationMarketplaceContract,
+    useBUSDContract,
+    useMMProContract,
+    usePancakeRouterContract
+} from "../../hooks/useContracts";
 import fromExponential from "from-exponential";
 import {getAllocationMarketplaceAddress, getBUSDAddress, getMMProAddress} from "../../utils/getAddress";
 import {useWeb3React} from "@web3-react/core";
@@ -93,7 +98,7 @@ export const AllocationItem = ({tier, price, initAmount, updateBalance, balance}
 
     const allocationMarketplaceContract = useAllocationMarketplaceContract();
     const pancakeRouterContract = usePancakeRouterContract();
-    const BUSDContract = useBUSDContract()
+    const MMPROContract = useMMProContract()
     const [loadingBuy, setLoadingBuy] = useState(false)
     const [error, setError] = useState("")
     const [amount, setAmount] = useState(initAmount)
@@ -141,7 +146,7 @@ export const AllocationItem = ({tier, price, initAmount, updateBalance, balance}
     // }
 
     const getAllowance = async () => {
-        return await BUSDContract
+        return await MMPROContract
             .methods
             .allowance(account, getAllocationMarketplaceAddress())
             .call();
@@ -149,7 +154,7 @@ export const AllocationItem = ({tier, price, initAmount, updateBalance, balance}
 
     const approve = async () => {
         const amount2eth = fromExponential(ALLOWANCE);
-        await BUSDContract
+        await MMPROContract
             .methods
             .approve(getAllocationMarketplaceAddress(), amount2eth)
             .send({from: account});
