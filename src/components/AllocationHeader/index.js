@@ -15,7 +15,7 @@ export const AllocationHeader = () => {
                         {localized(texts.ConnectWalletMessage, locale)}
                     </p>
                     <p className="mb-2 font-light md:text-2xl text-2xl italic">
-                        {localized(texts.MetamaskPricesMessage, locale)}  <a href={'https://t.me/MMPro_info_bot'} style={{color: "green"}}>@MMPro_info_bot</a>
+                        {localized(texts.MetamaskPricesMessage, locale)}  <a href={'https://t.me/mmpro_game_bot'} style={{color: "green"}}>@mmpro_game_bot</a>
                     </p>
                 </div>
             </div>
